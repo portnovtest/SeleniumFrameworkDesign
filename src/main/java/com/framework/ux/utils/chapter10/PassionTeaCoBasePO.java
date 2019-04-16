@@ -78,9 +78,9 @@ public abstract class PassionTeaCoBasePO<M extends WebElement> {
      */
     public void navigate(String page) throws Exception {
         WebDriver driver = CreateDriver.getInstance().getDriver();
-        BrowserUtils.waitForClickable(By.xpath("//a[contains (text(),'" + page + "')]"),Global_VARS.TIMEOUT_MINUTE);
+        BrowserUtils.waitForClickable(By.xpath("//a[contains (text(),\"" + page + "\")]"),Global_VARS.TIMEOUT_MINUTE);
 
-        driver.findElement(By.xpath("//a[contains (text(),'" + page + "')]")).click();
+        driver.findElement(By.xpath("//a[contains (text(),\"" + page + "\")]")).click();
 
         // wait for page title
         BrowserUtils.waitFor(this.getTitle(),Global_VARS.TIMEOUT_ELEMENT);
