@@ -44,4 +44,16 @@
             <class name="com.framework.ux.testcases.chapter10.PassionTeaCoTest" />
         </classes>
     </test>
+
+    <test name="Passion Tea Co Test - Safari">
+        <!-- test parameters -->
+        <parameter name="browser" value="safari"/>
+        <parameter name="platform" value="Mac"/>
+        <!--        <parameter name="includePattern" value=""/>-->
+        <!--        <parameter name="excludePattern" value=""/>-->
+
+        <classes>
+            <class name="com.framework.ux.testcases.chapter10.PassionTeaCoTest" />
+        </classes>
+    </test>
 </suite>

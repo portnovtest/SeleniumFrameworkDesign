@@ -10,6 +10,8 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.ie.InternetExplorerOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.safari.SafariDriver;
+import org.openqa.selenium.safari.SafariOptions;
 
 import java.io.FileInputStream;
 import java.util.HashMap;
@@ -123,6 +125,19 @@ public class CreateDriver {
                     webDriver.set(new InternetExplorerDriver(ieOpts.merge(caps)));
                 }
                 break;
+
+            case "safari":
+                caps = DesiredCapabilities.safari();
+
+                SafariOptions safariOpts = new SafariOptions();
+                safariOpts.setUseTechnologyPreview(false);
+                // safariOpts.setUseCleanSession(true);
+                caps.setCapability(SafariOptions.CAPABILITY,safariOpts);
+                caps.setCapability("autoAcceptAlerts", true);
+                //webDriver.set(new SafariDriver(caps));
+                if (environment.equalsIgnoreCase("local")) {
+                    webDriver.set(new SafariDriver(safariOpts));
+                }
         }
         getEnv = environment;
         getPlatform = platform;
